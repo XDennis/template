@@ -1,0 +1,35 @@
+<!--{template common/header_yi}-->
+
+<div class="container">
+  <div class="row row-offcanvas row-offcanvas-right">
+    <div class="col-xs-12">
+      <ol class="breadcrumb">
+        <li><a href="./">{lang portal}</a></li>
+        <li><a href="tag.php">{lang tag}</a></li>
+        <!--{if $tagname}-->
+        <li class="active"><a href="tag.php?id=$id"><span>$tagname</span></a></li>
+		<!--{/if}-->
+      </ol>
+
+      <div>
+      	<form method="post" action="tag.php?mod=tag" class="pns">
+			<input type="text" name="name" id="scbar_txt" placeholder="ËÑË÷±êÇ©" class="form-control" size="30" />
+		</form>
+		<div class="taglist mtm mbm">
+			<!--{if $tagarray}-->
+				<!--{loop $tagarray $tag}-->
+					<!-- <a href="misc.php?mod=tag&id=$tag[tagid]" title="$tag[tagname]" target="_blank" class="xi2">$tag[tagname]</a> -->
+					<a href="tag.php?id=$tag[tagid]" title="$tag[tagname]" target="_blank" class="xi2">$tag[tagname]</a>    
+				<!--{/loop}-->
+			<!--{else}-->
+				<p class="emp">{lang no_tag}</p>
+			<!--{/if}-->
+		</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="template/yi/images/holder.js"></script>
+<!--{template common/footer_yi}-->

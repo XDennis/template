@@ -1,0 +1,174 @@
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,
+body {
+  font-size: 16px;
+  line-height: 1.8;
+  font-family: Tahoma,Georgia,'Microsoft Yahei',"Times New Roman", serif;
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+  background-color: #f3f3f3;
+}
+
+body {
+  padding-top: 70px;
+}
+
+footer {
+  padding: 30px 0;
+}
+
+.navbar-user{
+  font-weight:bolder;
+}
+
+.navbar-inverse{
+    background-color: #428bca;
+    border-color: #428bca;
+}
+.navbar-inverse .navbar-nav>li>a{color:#fff;}
+.logo{
+    display: block;
+    width:160px;
+    height:49px;
+    background:url(http://www.siwenzaizi.cn//template/yi/images/logo.png) no-repeat;
+    margin-left:0px;
+}
+
+/*
+ * 首页部分
+  */
+.carousel{
+    width:95%;
+}
+.keywords{
+  font-size: 18px;
+  line-height: 1.5;
+  margin:10px 0px 0px;
+}
+.keywords li{
+    padding:5px;
+}
+
+.content_main {
+  font-family: Tahoma,'Microsoft Yahei','Simsun',"Times New Roman", Times, serif;
+  font-size: 18px;
+  line-height: 2;
+  padding-bottom: 10px;
+}
+
+  .content_main li {
+    display: block;
+    padding: 5px;
+  }
+
+.media-main {
+  padding: 0px 15px 15px;
+  line-height: 1.8;
+}
+
+.breadcrumb .active span{
+  font-size:36px;
+}
+
+#scbar_txt{
+  height: 45px;
+  font-size: 18px;
+  line-height: 2;
+}
+
+/*
+    资料库
+*/
+ .ziliao .media{ width:46%; float:left; background-color: #fff;
+-webkit-border-radius: 3px;border-radius: 3px; margin-right: 25px; 
+-moz-box-shadow:2px 2px 2px #969696,4px 4px 6px #969696,6px 6px 12px #969696;
+-webkit-box-shadow:2px 2px 2px #969696,4px 4px 6px #969696,6px 6px 12px #969696; 
+box-shadow:2px 2px 2px #969696,4px 4px 6px #969696,6px 6px 12px #969696;}
+.ziliao .media:first-child {margin-top: 15px;}
+.ziliao .media-body{padding-top:10px; padding-right:10px;}
+
+.qiwu .module ul{
+    list-style:none;
+    padding-left:0px;
+}
+    .qiwu .module ul li {
+        padding: 5px;
+        display:inline-block;
+        overflow:hidden;
+    }
+
+/*
+ * 列表分页样式
+ */
+.list-content .media{
+  margin-top: 30px;
+  line-height: 2;
+}
+
+ .list-content .media{ background-color: #fff;
+-webkit-border-radius: 3px;border-radius: 3px;margin-right: 15px;
+-moz-box-shadow:2px 2px 2px #969696,4px 4px 6px #969696,6px 6px 12px #969696;
+-webkit-box-shadow:2px 2px 2px #969696,4px 4px 6px #969696,6px 6px 12px #969696; 
+box-shadow:2px 2px 2px #969696,4px 4px 6px #969696,6px 6px 12px #969696;}
+ .list-content .media:first-child {margin-top: 15px;}
+ .list-content .media-body{padding:10px;}
+ .list-content .media, .list-content .media-body{overflow:inherit;}
+/*
+ * 分页样式
+ */
+.pgs .pg {
+  display: inline-block;
+  padding-left: 20px;
+  margin: 20px 0;
+  border-radius: 4px;
+  font-size: 18px;
+}
+
+  .pgs .pg a,
+  .pgs .pg strong {
+    padding: 10px;
+    color: #428bca;
+    text-decoration: none;
+  }
+
+.pg a.prev {
+  background-image: url(http://www.siwenzaizi.cn/static/image/common/arw_l.gif);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.pg a.nxt {
+  padding-right: 25px;
+  background-image: url(http://www.siwenzaizi.cn/static/image/common/arw_r.gif);
+  background-position: 90% 50%;
+  background-repeat: no-repeat;
+}
+
+.view-yi{
+    background-color:#fff;
+}
+.view-yi img{
+    width:100%;
+}
+.view-content h1{
+  text-align:center;
+}
+.view-content .view-content-info{
+  text-align:center;
+}
+
+/*
+ * SEARCH FROM
+*/
+.searchform .xs2 a{
+    margin:20px;
+}
+.searchform .xs2 a.a{
+    font-weight:bold;
+    font-size:20px;
+}
+.searchform .td_srchtxt{
+    padding:0 20px;
+}

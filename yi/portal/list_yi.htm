@@ -1,0 +1,74 @@
+<!--{template common/header_yi}-->
+<!--[name]list-yi[/name]-->
+<!--{eval $list = array();}-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page);}-->
+
+<div class="container">
+  <div class="row row-offcanvas row-offcanvas-right">
+    <div class="col-xs-12 col-sm-8">
+      <ol class="breadcrumb">
+        <li><a href="$_G[setting][navs][1][filename]">{lang portal}</a></li>
+        <!--{loop $cat[ups] $value}-->
+        <li>
+          <a href="{$portalcategory[$value['catid']]['caturl']}">$value[catname]</a>
+        </li>
+        <!--{/loop}-->
+        <li class="active"><span>$cat[catname]</span></li>
+      </ol>
+
+      <!--{if $cat[subs]}-->
+      <div class="bm_c bbda">
+        {lang sub_category}:&nbsp;&nbsp;
+        <!--{eval $i = 1;}-->
+        <!--{loop $cat[subs] $value}-->
+        <!--{if $i != 1}--><span class="pipe">|</span><!--{/if}--><a href="{$portalcategory[$value['catid']]['caturl']}">$value[catname]</a><!--{eval $i--;}-->
+        <!--{/loop}-->
+      </div>
+      <!--{/if}-->
+
+      <!--{if ($_G['group']['allowpostarticle'] || $_G['group']['allowmanagearticle'] || $categoryperm[$catid]['allowmanage'] || $categoryperm[$catid]['allowpublish']) && empty($portalcategory[$subcatid]['disallowpublish'])}-->
+      <span class="pull-right" style="margin-right:15px; position: relative; top: -65px;"><a href="portal.php?mod=portalcp&ac=article&catid=$cat[catid]">{lang article_publish}</a></span>
+      <!--{/if}-->
+
+      <ul class="media-list list-content">
+        <!--{loop $list['list'] $value}-->
+        <!--{eval $highlight = article_title_style($value);}-->
+        <!--{eval $article_url = fetch_article_url($value);}-->
+        <li class="media">
+          <!--{if $value[pic]}-->
+          <a href="$article_url" target="_blank" class="pull-right"><img src="$value[pic]" class="media-object img-rounded" alt="$value[title]" style="width:184px; height:124px;" /></a>
+          <!--{/if}-->
+          <div class="media-body">
+            <h3 class="media-heading"><a href="$article_url" target="_blank" $highlight>$value[title]</a> <!--{if $value[status] == 1}-->({lang moderate_need})<!--{/if}--></h3>
+            $value[summary]
+          </div>
+        </li>
+        <!--{/loop}-->
+      </ul>
+
+      <!--{if $list['multi']}--><div class="pgs cl">{$list['multi']}</div><!--{/if}-->
+    </div>
+
+    <div class="col-xs-12 col-sm-4 sidebar-offcanvas" id="sidebar" role="navigation">
+        <!--{template common/search_yi}-->
+
+      <div class="list-group">
+        <a href="#" class="list-group-item active">×îÐÂ</a>
+        <!--{block/1099}-->
+      </div>
+
+      <!--{if $cat[others]}-->
+      <div class="list-group">
+        <a href="#" class="list-group-item active">{lang category_related}</a>
+        <!--{loop $cat[others] $value}-->
+        <a href="{$portalcategory[$value['catid']]['caturl']}" class="list-group-item">$value[catname]</a>
+        <!--{/loop}-->
+        <!--{/if}-->
+      </div><!--/sidebar-->
+    </div>
+
+  </div>
+</div>
+<script src="template/yi/images/holder.js"></script>
+<!--{template common/footer_yi}-->

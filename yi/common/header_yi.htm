@@ -1,0 +1,43 @@
+<!--{subtemplate common/header_common_yi}-->
+
+<link rel="stylesheet" href="template/yi/images/yi.css">
+</head>
+
+<body>
+
+  <div class="navbar navbar-fixed-top navbar-inverse" id="top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <a class="navbar-brand logo" href="http://www.siwenzaizi.cn/" title="斯文在兹书房网(siwenzaizi.cn)，专注书房文化，中国传统文化"></a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="hanzi/">汉字</a></li>
+          <li><a href="shuyuan/">书院</a></li>
+          <li><a href="shufang/">书房</a></li>
+          <li><a href="forum.php">论坛</a></li>
+          <li><a href="portal.php?mod=topic&topicid=3">导航</a></li>
+          <!--{if $_G['uid']}-->
+          <li class="navbar-user"><a href="home.php?mod=spacecp" target="_blank" title="设置">{$_G[member][username]}</a></liclass>
+          <li class="navbar-user"><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a></li>
+          <!--{elseif !empty($_G['cookie']['loginuser'])}-->
+          <li class="navbar-user"><strong><a id="loginuser" class="noborder"><!--{echo dhtmlspecialchars($_G['cookie']['loginuser'])}--></a></strong></li>
+          <li class="navbar-user"><a href="member.php?mod=logging&action=login" onclick="showWindow('login', this.href)">{lang activation}</a></li>
+          <li class="navbar-user"><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a></li>
+          <!--{elseif !$_G[connectguest]}-->
+          <li class="navbar-user"><a href="member.php?mod=register">注册</a></li><li><a href="member.php?mod=logging&action=login">登录</a></li>
+          <!--{else}-->
+          <li class="navbar-user">{$_G[member][username]}<a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</li>
+          <!--{/if}-->
+        </ul>
+      </div><!-- /.nav-collapse -->
+    </div><!-- /.container -->
+  </div><!-- /.navbar -->
+
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title><!--{if !empty($navtitle)}-->$navtitle<!--{/if}--><!--{if empty($nobbname)}--> $_G['setting']['bbname']<!--{/if}--></title>
+
+	<meta name="keywords" content="{if !empty($metakeywords)}{echo dhtmlspecialchars($metakeywords)}{/if}" />
+	<meta name="description" content="{if !empty($metadescription)}{echo dhtmlspecialchars($metadescription)} {/if}{if empty($nobbname)},$_G['setting']['bbname']{/if}" />
+
+	<meta name="author" content="Dennis" />
+	<meta name="copyright" content="2013-2014 www.siwenzaizi.cn" />
+    <link rel="icon" href="favicon.ico">
+	<base href="{$_G['siteurl']}" />
+    
+        <link rel="stylesheet" href="template/yi/images/bootstrap/css/bootstrap.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+        <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->

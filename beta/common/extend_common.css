@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+#qmenu { display: none; }
+a:hover{color: #fe9900;}
+
+body {
+background: #FFF url("http://www.siwenzaizi.com/template/beta/images/cbg.jpg") !important;
+}
+#toptb {border-bottom: 0px; background: none;}
+#um { padding-top: 0px; }
+.avt img { width:24px; height:24px;  background: none; border: 0px;}
+.vwmy { padding-left: 0px;  background-image: none; }
+#switchblind { display: none; }
+#diy-tg { position:absolute; top: 0px; right: 0px;}
+#hd .wp { padding: 0px; }
+.hdb{background: url(http://www.siwenzaizi.com/template/beta/images/topbg.jpg);}
+#nv { background-image: none; background-color: #fe9900; }
+#nv li { background: url(http://www.siwenzaizi.com/template/beta/images/libg.png) no-repeat 100% 10px }
+#nv li.a { background: url(http://www.siwenzaizi.com/template/beta/images/libg.png) no-repeat 100% 10px }
+#nv li a {background-image: none; background-color: #fe9900; }
+#nv li a:hover {background-image: none; background-color: #fe9900; text-decoration: none;}
+#nv li.hover a,#nv li.hover a:hover{background-image: none; background-color: #fe9900; }
+#mn_Nd5de{background: none !important;}
+
+/* view */
+.xld .atc img { width: 180px; height: 120px;  max-width:180px; max-height: 120px; border: 0px;}
+.xs2 { font: 16px/26px 'Tahoma'; color: #333; }
+.vw h1.ph { font: 26px/34px 'Microsoft Yahei'; color: #333; }
+#article_content { font: 20px/2.3 Tahoma,'Microsoft Yahei','Simsun'; color: #333; letter-spacing: 2px; }
+
+/* tab block */
+.frame-tab .tb { padding-left: 0px;}
+.tb { padding-left: 0px; }
+
+/*two rank list */
+.bm_h h2{ font: 18px/30px 'Microsoft Yahei'; color: #333; }
+.xl1_elp { font: 14px/25px Tahoma,'Microsoft Yahei','Simsun'; color: #333; }
+.xl1 li { font: 14px/25px Tahoma,'Microsoft Yahei','Simsun'; color: #333;  height:25px;}
+.bm_c { background-color: #fff; }
+
+#diy1 .block { margin:0px; }
+#diy1 .frame, .frame-tab { margin-bottom: 0px; border:0px; }
+#diy1 .slidebar ul { position:relative; right: -600px; bottom: -270px; z-index: 10; }
+
+
+/* search */
+/*#ct form.searchform {background: url(http://www.siwenzaizi.com/template/beta/images/topbg.jpg);}*/
+.sttl{background: none !important;}

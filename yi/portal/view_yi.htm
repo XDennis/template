@@ -1,0 +1,105 @@
+<!--{template common/header_yi}-->
+<!--[name]view-yi[/name]-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 view-content">
+      
+        <div class="view-yi well">
+            <ol class="breadcrumb">
+                <li><a href="$_G[setting][navs][1][filename]">{lang portal}</a></li>
+                <!--{loop $cat[ups] $value}-->
+                <li>
+                    <a href="{echo getportalcategoryurl($value[catid])}">$value[catname]</a>
+                </li>
+                <!--{/loop}-->
+                <li class="active">$cat[catname]</li>
+            </ol>
+
+            <h1>$article[title]</h1>
+            <ul class="list-inline view-content-info">
+                <li>$article[dateline]</li>
+                <!--{if $article[author]}-->
+                <li>$article[author]</li><!--{/if}-->
+                <!--{if $article[from]}-->
+                <li>
+                    来源：
+                    <!--{if $article[fromurl]}-->
+                    <a href="$article[fromurl]" target="_blank">$article[from]</a>
+                    <!--{else}-->
+                    <a href="#" target="_blank">$article[from]</a>
+                    <!--{/if}-->
+                </li>
+                <!--{/if}-->
+                <!--{if $_G['group']['allowmanagearticle'] || ($_G['group']['allowpostarticle'] && $article['uid'] == $_G['uid'] && (empty($_G['group']['allowpostarticlemod']) || $_G['group']['allowpostarticlemod'] && $article['status'] == 1)) || $categoryperm[$value['catid']]['allowmanage']}-->
+                <li><a href="portal.php?mod=portalcp&ac=article&op=edit&aid=$article[aid]">{lang edit}</a></li>
+                <!--{if $article[status]>0 && ($_G['group']['allowmanagearticle'] || $categoryperm[$value['catid']]['allowmanage'])}-->
+                <li><a href="portal.php?mod=portalcp&ac=article&op=verify&aid=$article[aid]" id="article_verify_$article[aid]" onclick="showWindow(this.id, this.href, 'get', 0);">{lang moderate}</a></li>
+                <!--{else}-->
+                <li><a href="portal.php?mod=portalcp&ac=article&op=delete&aid=$article[aid]" id="article_delete_$article[aid]" onclick="showWindow(this.id, this.href, 'get', 0);">{lang delete}</a></li>
+                <!--{/if}-->
+                <!--{/if}-->
+            </ul>
+            <!--{hook/view_article_top}-->
+            <!--{hook/view_article_subtitle}-->
+            <div class="content">$content[content]</div>
+            <!--{hook/view_article_content}-->
+        </div>
+
+      <!-- JiaThis Button BEGIN -->
+        <div class="jiathis_style_32x32" style="display: inline-block;">
+          <a class="jiathis_button_tsina"></a>
+          <a class="jiathis_button_tqq"></a>
+          <a class="jiathis_button_weixin"></a>
+          <a class="jiathis_button_qzone"></a>
+          <a class="jiathis_button_renren"></a>
+          <a class="jiathis_button_tsohu"></a>
+          <a class="jiathis_button_douban"></a>
+          <a class="jiathis_button_twitter"></a>
+          <a class="jiathis_button_cqq"></a>
+          <a href="http://www.jiathis.com/share?uid=1591531" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+        </div>
+        <script type="text/javascript">
+        var jiathis_config = {data_track_clickback:'true'};
+        </script>
+        <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1591531" charset="utf-8"></script>
+        <!-- JiaThis Button END -->
+
+      <div class="content-bottom">
+        <!--{if $article['preaid'] || $article['nextaid']}-->
+
+        <ul class="pager">
+          <!--{if $article['prearticle']}-->
+          <li class="previous"><a href="{$article['prearticle']['url']}">&larr; {$article['prearticle']['title']}</a></li><!--{/if}-->
+          <!--{if $article['nextarticle']}-->
+          <li class="next"><a href="{$article['nextarticle']['url']}">{$article['nextarticle']['title']} &rarr;</a></li><!--{/if}-->
+        </ul>
+        <!--{/if}-->
+      </div>
+
+      <!-- Duoshuo Comment BEGIN  add at 2014-7-23-->
+      <div class="ds-thread" data-category="$cat[catid]" data-thread-key="$article[aid]" 
+      data-title="$article[title]" data-author-key="$article[uid]" data-url=""></div>
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"siwenzaizi"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = 'http://static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+      <!-- Duoshuo Comment END -->
+    </div>
+
+    <div class="col-xs-12 col-sm-4 sidebar-offcanvas" id="sidebar" role="navigation">
+      <div class="list-group">
+        <a href="#" class="list-group-item active">最新</a>
+        <!--{block/1099}-->
+      </div>
+    </div><!--/sidebar-->
+  </div>
+</div>
+<!--{template common/footer_yi}-->

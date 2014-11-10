@@ -1,0 +1,43 @@
+<!--{template common/header}-->
+<!--[name]jia-list-wenfang[/name]-->
+<!--{eval $list = array();}-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page, 30);}-->
+
+<style type="text/css">
+.item{width: 180px; height: 180px; background-color: #fff; margin: 3px; text-align: center;}
+.item a {margin: 0 auto;}
+.item img{width: 155px; height: 155px;}
+</style>
+<div id="ct" class="ct2 wp cl">
+	<div id="pt" class="cl">
+		<div class="z">
+			<a href="index.php" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
+			<a href="$_G[setting][navs][1][filename]">{lang portal}</a> <em>&rsaquo;</em>
+			<!--{loop $cat[ups] $value}--> <a href="{$portalcategory[$value['catid']]['caturl']}">$value[catname]</a><em>&rsaquo;</em><!--{/loop}-->
+			$cat[catname]
+		</div>
+	</div>
+	<div id="container" class="">
+		<!--{loop $list['list'] $value}-->
+		
+		<!--{eval $highlight = article_title_style($value);}-->
+		<!--{eval $article_url = fetch_article_url($value);}-->
+		<div class="item bm">
+			<div><a href="$article_url" target="_blank" class="xi2" $highlight>$value[title]</a></div>
+			<!--{if $value[pic]}--><div class=""><a href="$article_url" target="_blank"><img src="$value[pic]" alt="$value[title]" class="tn" /></a></div><!--{/if}-->
+		</div>
+		<!--{/loop}-->
+
+	</div>
+	<!--{if $list['multi']}--><div class="pgs cl">{$list['multi']}</div><!--{/if}-->
+</div>
+<script src="/template/default/masonry.pkgd.min.js"></script>
+<script type="text/javascript">
+var container = document.querySelector('#container');
+var msnry = new Masonry( container, {
+  itemSelector: '.item'
+});
+</script>
+
+<!--{template common/footer}-->
