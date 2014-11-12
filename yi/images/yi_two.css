@@ -1,0 +1,8 @@
+/*
+ * 这个文件配合header来处理 斯文在兹网站的展示
+ * 
+ */
+ html, body { background: #f3f3f3; }
+ h1, .h1, h2, .h2, h3, .h3 { margin-top: 10px; }
+.px { height: auto; }
+kbd { border: 0px; background-color: inherit; -webkit-box-shadow: none; box-shadow: none;}
