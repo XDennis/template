@@ -6,3 +6,13 @@
  h1, .h1, h2, .h2, h3, .h3 { margin-top: 10px; }
 .px { height: auto; }
 kbd { border: 0px; background-color: inherit; -webkit-box-shadow: none; box-shadow: none;}
+
+.wp { width: auto; }
+.ct2_a .mn { width: 80%; text-align: left; }
+
+
+/* forum */
+.bm_h { height: 50px; }
+
+.container { position: static; border: 0px; margin-top: 0px; background-color: inherit; }
+.pi { height: 50px; }
