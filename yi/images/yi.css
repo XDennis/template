@@ -81,7 +81,7 @@ footer {
 /*
     资料库
 */
- .ziliao .media{ width:46%; float:left; background-color: #fff;
+ .ziliao .media{ padding-left: 5px; background-color: #fff;
 -webkit-border-radius: 3px;border-radius: 3px; margin-right: 25px; 
 -moz-box-shadow:2px 2px 2px #969696,4px 4px 6px #969696,6px 6px 12px #969696;
 -webkit-box-shadow:2px 2px 2px #969696,4px 4px 6px #969696,6px 6px 12px #969696; 
@@ -115,6 +115,7 @@ box-shadow:2px 2px 2px #969696,4px 4px 6px #969696,6px 6px 12px #969696;}
  .list-content .media:first-child {margin-top: 15px;}
  .list-content .media-body{padding:10px;}
  .list-content .media, .list-content .media-body{overflow:inherit;}
+ .list-content .media .media-right { padding: 10px;}
 /*
  * 分页样式
  */

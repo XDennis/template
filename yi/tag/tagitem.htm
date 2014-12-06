@@ -17,13 +17,14 @@
 		<!--{loop $articlelist $article}-->
 		
 		<li class="media">
-          <!--{if $article[pic]}-->
-          <a href="portal.php?mod=view&aid=$article[aid]" target="_blank" class="pull-right"><img src="data/attachment/$article['pic']" class="media-object img-rounded" alt="$article['title']" style="width:184px; height:124px;" /></a>
-          <!--{/if}-->
+          
           <div class="media-body">
           	<h3 class="media-heading"><a href="portal.php?mod=view&aid=$article[aid]" target="_blank">$article['title']</a> <!--{if $article[status] == 1}-->({lang moderate_need})<!--{/if}--></h3>
             $article[summary]
           </div>
+          <!--{if $article[pic]}-->
+          <a href="portal.php?mod=view&aid=$article[aid]" target="_blank" class="media-right media-middle"><img src="data/attachment/$article['pic']" class="media-object img-rounded" alt="$article['title']" style="width:184px; height:124px;" /></a>
+          <!--{/if}-->
         </li>
 		
 		<!--{/loop}-->

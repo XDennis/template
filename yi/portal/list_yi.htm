@@ -36,13 +36,14 @@
         <!--{eval $highlight = article_title_style($value);}-->
         <!--{eval $article_url = fetch_article_url($value);}-->
         <li class="media">
-          <!--{if $value[pic]}-->
-          <a href="$article_url" target="_blank" class="pull-right"><img src="$value[pic]" class="media-object img-rounded" alt="$value[title]" style="width:184px; height:124px;" /></a>
-          <!--{/if}-->
+          
           <div class="media-body">
             <h3 class="media-heading"><a href="$article_url" target="_blank" $highlight>$value[title]</a> <!--{if $value[status] == 1}-->({lang moderate_need})<!--{/if}--></h3>
             $value[summary]
           </div>
+          <!--{if $value[pic]}-->
+          <a href="$article_url" target="_blank" class="media-right media-middle"><img src="$value[pic]" class="media-object img-rounded" alt="$value[title]" style="width:184px; height:124px;" /></a>
+          <!--{/if}-->
         </li>
         <!--{/loop}-->
       </ul>
