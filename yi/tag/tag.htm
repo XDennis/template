@@ -17,10 +17,13 @@
 		</form>
 		<div class="taglist mtm mbm">
 			<!--{if $tagarray}-->
+				<ul class="list-inline">
 				<!--{loop $tagarray $tag}-->
 					<!-- <a href="misc.php?mod=tag&id=$tag[tagid]" title="$tag[tagname]" target="_blank" class="xi2">$tag[tagname]</a> -->
-					<a href="tag.php?id=$tag[tagid]" title="$tag[tagname]" target="_blank" class="xi2">$tag[tagname]</a>    
+					<li>
+					<a href="tag.php?id=$tag[tagid]" title="$tag[tagname]" target="_blank" class="xi2 list-group-item">$tag[tagname]</a></li>   
 				<!--{/loop}-->
+				</ul>
 			<!--{else}-->
 				<p class="emp">{lang no_tag}</p>
 			<!--{/if}-->

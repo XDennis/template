@@ -186,3 +186,10 @@ box-shadow:2px 2px 2px #969696,4px 4px 6px #969696,6px 6px 12px #969696;}
 .searchform .td_srchtxt{
     padding:0 20px;
 }
+
+.taglist {
+  padding: 20px;
+}
+.taglist li {
+  padding: 5px;
+}
