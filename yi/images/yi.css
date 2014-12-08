@@ -81,6 +81,7 @@ footer {
 /*
     资料库
 */
+
  .ziliao .media{ padding-left: 5px; background-color: #fff;
 -webkit-border-radius: 3px;border-radius: 3px; margin-right: 25px; 
 -moz-box-shadow:2px 2px 2px #969696,4px 4px 6px #969696,6px 6px 12px #969696;
@@ -88,6 +89,12 @@ footer {
 box-shadow:2px 2px 2px #969696,4px 4px 6px #969696,6px 6px 12px #969696;}
 .ziliao .media:first-child {margin-top: 15px;}
 .ziliao .media-body{padding-top:10px; padding-right:10px;}
+
+@media (max-width: 480px) and (orientation: portrait) {
+  .ziliao .media-body .meida-summary {
+    display: none;
+  }
+}
 
 .qiwu .module ul{
     list-style:none;
@@ -116,6 +123,12 @@ box-shadow:2px 2px 2px #969696,4px 4px 6px #969696,6px 6px 12px #969696;}
  .list-content .media-body{padding:10px;}
  .list-content .media, .list-content .media-body{overflow:inherit;}
  .list-content .media .media-right { padding: 10px;}
+
+ @media (max-width: 480px) and (orientation: portrait) {
+  .list-content .media-body .meida-summary {
+    display: none;
+  }
+}
 /*
  * 分页样式
  */
