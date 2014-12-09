@@ -132,6 +132,7 @@ box-shadow:2px 2px 2px #969696,4px 4px 6px #969696,6px 6px 12px #969696;}
 /*
  * ·ÖÒ³ÑùÊ½
  */
+.pgs { text-align: center;}
 .pgs .pg {
   display: inline-block;
   padding-left: 20px;
