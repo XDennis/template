@@ -1,5 +1,5 @@
 <div class="tl">
-    <div class="sttl mbn well" style="background-color: #fff;">
+    <div class="sttl mbn well searchlistkeyword">
         <h3><!--{if $keyword}-->{lang search_result_keyword} <!--{if $modfid}--><a href="forum.php?mod=modcp&action=thread&fid=$modfid&keywords=$modkeyword&submit=true&do=search&page=$page" target="_blank">{lang goto_memcp}</a><!--{/if}--><!--{else}-->{lang search_result}<!--{/if}--></h3>
     </div>
 	<!--{ad/search/y mtw}-->
@@ -12,8 +12,9 @@
 			<!--{/if}-->
                 <ul class="media-list list-content">
                     <!--{loop $threadlist $thread}-->
-                    <li class="" id="$thread[tid]">
-                        <h3 class="xs3">
+                    <li class="media" id="$thread[tid]">
+                        <div class="media-body">
+                        <h3 class="xs3 media-heading">
                             <!--{if $modfid}-->
                             <!--{if $thread['fid'] == $modfid && ($thread['displayorder'] <= 3 || $_G['adminid'] == 1)}-->
                             <input onclick="tmodclick(this)" type="checkbox" name="moderate[]" value="$thread[tid]" />&nbsp;
@@ -23,10 +24,13 @@
                             <!--{/if}-->
                             <a href="forum.php?mod=viewthread&tid=$thread[realtid]&highlight=$index[keywords]" target="_blank" $thread[highlight]>$thread[subject]</a>
                         </h3>
-                        <p class="xg1">$thread[replies] {lang a_comment_thread} - $thread[views] {lang a_visit}</p>
+                        
                         <p><!--{if !$thread['price'] && !$thread['readperm']}-->$thread[message]<!--{else}-->{lang thread_list_message1}<!--{/if}--></p>
                         <p>
+
                             <span>$thread[dateline]</span>
+                            -
+                            <span class="xg1">$thread[replies] {lang a_comment_thread} - $thread[views] {lang a_visit}</span>
                             -
                             <span>
                                 <!--{if $thread['authorid'] && $thread['author']}-->
@@ -38,6 +42,7 @@
                             -
                             <span><a href="forum.php?mod=forumdisplay&fid=$thread[fid]" target="_blank" class="xi1">$thread[forumname]</a></span>
                         </p>
+                        </div>
                     </li>
                     <!--{/loop}-->
                 </ul>

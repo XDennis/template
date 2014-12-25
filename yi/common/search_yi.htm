@@ -1,5 +1,5 @@
 <div class="list-group" id="scbar">
-    <form id="scbar_form" role="search" method="{if $_G[fid] && !empty($searchparams[url])}get{else}post{/if}" autocomplete="off" onsubmit="searchFocus($('scbar_txt'))" action="{if $_G[fid] && !empty($searchparams[url])}$searchparams[url]{else}search.php?searchsubmit=yes{/if}" target="_blank">
+    <form id="scbar_form" role="search" method="post" autocomplete="off" onsubmit="if($('scbar_txt')) searchFocus($('scbar_txt'));" action="search.php?searchsubmit=yes" target="_blank">
         <input type="hidden" name="mod" id="scbar_mod" value="search" />
         <input type="hidden" name="formhash" value="{FORMHASH}" />
         <input type="hidden" name="srchtype" value="title" />
@@ -14,6 +14,8 @@
         <input type="hidden" name="fId" id="srchFId" value="$_G[fid]" />
         <input type="hidden" name="q" id="cloudsearchquery" value="" />
         <!--{/if}-->
-        <input type="text" name="srchtxt" id="scbar_txt" placeholder="ËÑË÷" class="form-control" autocomplete="off" x-webkit-speech speech />
+        <input type="text" name="srchtxt" id="scbar_txt" placeholder="ËÑË÷" class="form-control pull-left" autocomplete="off" x-webkit-speech speech />
+        <button type="submit" id="scbar_submit" class="btn btn-default pull-left"><span class="glyphicon glyphicon-search"></span></button>
     </form>
+    <div style="clear:both;"></div>
 </div>

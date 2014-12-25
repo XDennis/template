@@ -1,5 +1,5 @@
 <div class="tl">
-    <div class="sttl mbn well" style="background-color: #fff;">
+    <div class="sttl mbn well searchlistkeyword">
         <h3><!--{if $keyword}-->{lang search_result_keyword}<!--{else}-->{lang search_result}<!--{/if}--></h3>
     </div>
 	<!--{ad/search/y mtw}-->
@@ -9,15 +9,16 @@
 		<div class="slst mtw">
             <ul class="media-list list-content">
                 <!--{loop $articlelist $article}-->
-                <li class="">
-                    <h3 class="xs3"><a href="{echo fetch_article_url($article);}" target="_blank">$article[title]</a></h3>
-                    <p class="xg1">$article[commentnum] {lang a_comment} - $article[viewnum] {lang a_visit}</p>
-                    <p>$article[summary]</p>
-                    <p>
-                        <span>$article[dateline]</span>
-                        -
-                        <span><a href="home.php?mod=space&uid=$article[uid]" target="_blank">$article[username]</a></span>
-                    </p>
+                <li class="media">
+                    <div class="media-body">
+                        <h3 class="media-heading"><a href="{echo fetch_article_url($article);}" target="_blank">$article[title]</a></h3>
+                          <div class="meida-summary">
+                            $article[summary]
+                          </div>
+                      </div>
+                      <!--{if $article[pic]}-->
+                      <a href="{echo fetch_article_url($article);}" target="_blank" class="media-right media-middle"><img src="$article[pic]" class="media-object img-rounded" style="width:184px; height:124px;" /></a>
+                      <!--{/if}-->
                 </li>
                 <!--{/loop}-->
             </ul>
