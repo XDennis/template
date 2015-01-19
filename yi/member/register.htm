@@ -32,7 +32,7 @@
 			<!--{if $_GET[action] == 'activation'}-->
 				{lang login_inactive}
 			<!--{else}-->
-				<a href="member.php?mod=logging&action=login&referer={echo rawurlencode($dreferer)}" onclick="showWindow('login', this.href);return false;" class="xi2">{lang login_now}</a>
+				<a href="member.php?mod=logging&action=login&referer={echo rawurlencode($dreferer)}" class="xi2">{lang login_now}</a>
 			<!--{/if}-->
 		</span>
 		<h3 id="layer_reginfo_t" class="xs2">
@@ -61,7 +61,7 @@
 								<tr>
 									<th><span class="rq">*</span><label for="{$this->setting['reginput']['email']}">{lang email}:</label></th>
 									<td>
-										<input type="text" id="{$this->setting['reginput']['email']}" name="$this->setting['reginput']['email']" autocomplete="off" size="25" tabindex="1" class="px" required /><br /><em id="emailmore">&nbsp;</em>
+										<input type="text" id="{$this->setting['reginput']['email']}" name="$this->setting['reginput']['email']" autocomplete="off" size="25" tabindex="1" class="px form-control" required /><br /><em id="emailmore">&nbsp;</em>
 										<input type="hidden" name="handlekey" value="sendregister"/>
 									</td>
 									<td class="tipcol"><i id="tip_{$this->setting['reginput']['email']}" class="p_tip">{lang register_email_tips}</i><kbd id="chk_{$this->setting['reginput']['email']}" class="p_chk"></kbd></td>
@@ -110,7 +110,7 @@
 							<table>
 								<tr>
 									<th><span class="rq">*</span><label for="invitecode">{lang invite_code}:</label></th>
-									<td><input type="text" id="invitecode" name="invitecode" autocomplete="off" size="25" onblur="checkinvite()" tabindex="1" class="px" required /><!--{if $this->setting['inviteconfig']['buyinvitecode'] && $this->setting['inviteconfig']['invitecodeprice'] && ($this->setting[ec_tenpay_bargainor] || $this->setting[ec_tenpay_opentrans_chnid] || $this->setting[ec_account])}--><p><a href="misc.php?mod=buyinvitecode" target="_blank" class="xi2">{lang register_buyinvitecode}</a></p><!--{/if}--></td>
+									<td><input type="text" id="invitecode" name="invitecode" autocomplete="off" size="25" onblur="checkinvite()" tabindex="1" class="px form-control" required /><!--{if $this->setting['inviteconfig']['buyinvitecode'] && $this->setting['inviteconfig']['invitecodeprice'] && ($this->setting[ec_tenpay_bargainor] || $this->setting[ec_tenpay_opentrans_chnid] || $this->setting[ec_account])}--><p><a href="misc.php?mod=buyinvitecode" target="_blank" class="xi2">{lang register_buyinvitecode}</a></p><!--{/if}--></td>
 									<td class="tipcol"><i id="tip_invitecode" class="p_tip"><!--{if $this->setting['inviteconfig']['invitecodeprompt']}-->$this->setting[inviteconfig][invitecodeprompt]<!--{/if}--></i><kbd id="chk_invitecode" class="p_chk"></kbd></td>
 								</tr>
 							</table>
@@ -123,7 +123,7 @@
 								<table>
 									<tr>
 										<th><span class="rq">*</span><label for="{$this->setting['reginput']['username']}">{lang username}:</label></th>
-										<td><input type="text" id="{$this->setting['reginput']['username']}" name="" class="px" tabindex="1" value="{echo dhtmlspecialchars($_GET[defaultusername])}" autocomplete="off" size="25" maxlength="15" required /></td>
+										<td><input type="text" id="{$this->setting['reginput']['username']}" name="" class="px form-control" tabindex="1" value="{echo dhtmlspecialchars($_GET[defaultusername])}" autocomplete="off" size="25" maxlength="15" required /></td>
 										<td class="tipcol"><i id="tip_{$this->setting['reginput']['username']}" class="p_tip">{lang register_username_tips}</i><kbd id="chk_{$this->setting['reginput']['username']}" class="p_chk"></kbd></td>
 									</tr>
 								</table>
@@ -133,7 +133,7 @@
 								<table>
 									<tr>
 										<th><span class="rq">*</span><label for="{$this->setting['reginput']['password']}">{lang password}:</label></th>
-										<td><input type="password" id="{$this->setting['reginput']['password']}" name="" size="25" tabindex="1" class="px" required /></td>
+										<td><input type="password" id="{$this->setting['reginput']['password']}" name="" size="25" tabindex="1" class="px form-control" required /></td>
 										<td class="tipcol"><i id="tip_{$this->setting['reginput']['password']}" class="p_tip">{lang register_password_tips}<!--{if $_G['setting']['pwlength']}-->, {lang register_password_length_tips1} $_G['setting']['pwlength'] {lang register_password_length_tips2}<!--{/if}--></i><kbd id="chk_{$this->setting['reginput']['password']}" class="p_chk"></kbd></td>
 									</tr>
 								</table>
@@ -143,7 +143,7 @@
 								<table>
 									<tr>
 										<th><span class="rq">*</span><label for="{$this->setting['reginput']['password2']}">{lang password_confirm}:</label></th>
-										<td><input type="password" id="{$this->setting['reginput']['password2']}" name="" size="25" tabindex="1" value="" class="px" required /></td>
+										<td><input type="password" id="{$this->setting['reginput']['password2']}" name="" size="25" tabindex="1" value="" class="px form-control" required /></td>
 										<td class="tipcol"><i id="tip_{$this->setting['reginput']['password2']}" class="p_tip">{lang register_repassword_tips}</i><kbd id="chk_{$this->setting['reginput']['password2']}" class="p_chk"></kbd></td>
 									</tr>
 								</table>
@@ -153,7 +153,7 @@
 								<table>
 									<tr>
 										<th><!--{if !$_G['setting']['forgeemail']}--><span class="rq">*</span><!--{/if}--><label for="{$this->setting['reginput']['email']}">{lang email}:</label></th>
-										<td><input type="text" id="{$this->setting['reginput']['email']}" name="" autocomplete="off" size="25" tabindex="1" class="px" value="$hash[0]" {if !$_G['setting']['forgeemail']}required{/if} /><br /><em id="emailmore">&nbsp;</em></td>
+										<td><input type="text" id="{$this->setting['reginput']['email']}" name="" autocomplete="off" size="25" tabindex="1" class="px form-control" value="$hash[0]" {if !$_G['setting']['forgeemail']}required{/if} /><br /><em id="emailmore">&nbsp;</em></td>
 										<td class="tipcol"><i id="tip_{$this->setting['reginput']['email']}" class="p_tip">{lang register_email_tips}</i><kbd id="chk_{$this->setting['reginput']['email']}" class="p_chk"></kbd></td>
 									</tr>
 								</table>
@@ -176,7 +176,7 @@
 							<table>
 								<tr>
 									<th><span class="rq">*</span><label for="regmessage">{lang register_message}:</label></th>
-									<td><input id="regmessage" name="regmessage" class="px" autocomplete="off" size="25" tabindex="1" required /></td>
+									<td><input id="regmessage" name="regmessage" class="px form-control" autocomplete="off" size="25" tabindex="1" required /></td>
 									<td class="tipcol"><i id="tip_regmessage" class="p_tip">{lang register_message1}</i></td>
 								</tr>
 							</table>
@@ -188,7 +188,7 @@
 							<table>
 								<tr>
 									<th><label for="invitecode">{lang invite_code}:</label></th>
-									<td><input type="text" name="invitecode" autocomplete="off" size="25" id="invitecode"{if $this->setting['regstatus'] == 2} onblur="checkinvite()"{/if} tabindex="1" class="px" /></td>
+									<td><input type="text" name="invitecode" autocomplete="off" size="25" id="invitecode"{if $this->setting['regstatus'] == 2} onblur="checkinvite()"{/if} tabindex="1" class="px form-control" /></td>
 								</tr>
 							</table>
 						</div>
@@ -230,7 +230,7 @@
 						<td>
 							<span id="reginfo_a_btn">
 								<!--{if $_GET[action] != 'activation'}--><em>&nbsp;</em><!--{/if}-->
-									<button class="pn pnc" id="registerformsubmit" type="submit" name="regsubmit" value="true" tabindex="1"><strong><!--{if $_GET[action] == 'activation'}-->{lang activation}<!--{else}-->{lang submit}<!--{/if}--></strong></button>
+									<button class="btn btn-primary" id="registerformsubmit" type="submit" name="regsubmit" value="true" tabindex="1"><strong><!--{if $_GET[action] == 'activation'}-->{lang activation}<!--{else}-->{lang submit}<!--{/if}--></strong></button>
 								<!--{if $bbrules}-->
 									<input type="checkbox" class="pc" name="agreebbrule" value="$bbrulehash" id="agreebbrule" checked="checked" /> <label for="agreebbrule">{lang agree}<a href="javascript:;" onclick="showBBRule()">{lang rulemessage}</a></label>
 								<!--{/if}-->

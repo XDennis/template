@@ -37,7 +37,7 @@
 			<span><!--{if !empty($_GET['infloat']) && !isset($_GET['frommessage'])}--><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET[handlekey]', 0, 1);" title="{lang close}">{lang close}</a><!--{/if}--></span>
 		</h3>
 		<!--{hook/logging_top}-->
-		<form method="post" autocomplete="off" name="login" id="loginform_$loginhash" class="cl" onsubmit="{if $this->setting['pwdsafety']}pwmd5('password3_$loginhash');{/if}pwdclear = 1;ajaxpost('loginform_$loginhash', 'returnmessage_$loginhash', 'returnmessage_$loginhash', 'onerror');return false;" action="member.php?mod=logging&action=login&loginsubmit=yes{if !empty($_GET['handlekey'])}&handlekey=$_GET[handlekey]{/if}{if isset($_GET['frommessage'])}&frommessage{/if}&loginhash=$loginhash">
+		<form method="post" autocomplete="off" name="login" id="loginform_$loginhash" class="cl" role="form" onsubmit="{if $this->setting['pwdsafety']}pwmd5('password3_$loginhash');{/if}pwdclear = 1;ajaxpost('loginform_$loginhash', 'returnmessage_$loginhash', 'returnmessage_$loginhash', 'onerror');return false;" action="member.php?mod=logging&action=login&loginsubmit=yes{if !empty($_GET['handlekey'])}&handlekey=$_GET[handlekey]{/if}{if isset($_GET['frommessage'])}&frommessage{/if}&loginhash=$loginhash">
 			<div class="c cl">
 				<input type="hidden" name="formhash" value="{FORMHASH}" />
 				<input type="hidden" name="referer" value="{echo dreferer()}" />
@@ -63,7 +63,7 @@
 							<th>
 								<!--{if $this->setting['autoidselect']}--><label for="username_$loginhash">{lang login_id}:</label><!--{else}-->
 									<span class="login_slct">
-										<select name="loginfield" style="float: left;" width="45" id="loginfield_$loginhash">
+										<select name="loginfield" style="float: left;" width="90" id="loginfield_$loginhash">
 											<option value="username">{lang username}</option>
 											<!--{if getglobal('setting/uidlogin')}-->
 											<option value="uid">{lang uid}</option>
@@ -73,7 +73,7 @@
 									</span>
 								<!--{/if}-->
 							</th>
-							<td><input type="text" name="username" id="username_$loginhash" autocomplete="off" size="30" class="px p_fre" tabindex="1" value="$username" /></td>
+							<td><input type="text" name="username" id="username_$loginhash" autocomplete="off" size="30" class="px p_fre form-control" tabindex="1" value="$username" /></td>
 							<td class="tipcol"><a href="member.php?mod={$_G[setting][regname]}">$_G['setting']['reglinkname']</a></td>
 						</tr>
 					</table>
@@ -82,7 +82,7 @@
 					<table>
 						<tr>
 							<th><label for="password3_$loginhash">{lang login_password}:</label></th>
-							<td><input type="password" id="password3_$loginhash" name="password" onfocus="clearpwd()" size="30" class="px p_fre" tabindex="1" /></td>
+							<td><input type="password" id="password3_$loginhash" name="password" onfocus="clearpwd()" size="30" class="px p_fre form-control" tabindex="1" /></td>
 							<td class="tipcol"><a href="javascript:;" onclick="display('layer_login_$loginhash');display('layer_lostpw_$loginhash');" title="{lang getpassword}">{lang getpassword}</a></td>
 						</tr>
 					</table>
@@ -94,7 +94,7 @@
 					<table>
 						<tr>
 							<th>{lang security_q}:</th>
-							<td><select id="loginquestionid_$loginhash" width="213" name="questionid"{if !$questionexist} onchange="if($('loginquestionid_$loginhash').value > 0) {$('loginanswer_row_$loginhash').style.display='';} else {$('loginanswer_row_$loginhash').style.display='none';}"<!--{/if}-->>
+							<td><select id="loginquestionid_$loginhash" width="213" class="form-control" name="questionid"{if !$questionexist} onchange="if($('loginquestionid_$loginhash').value > 0) {$('loginanswer_row_$loginhash').style.display='';} else {$('loginanswer_row_$loginhash').style.display='none';}"<!--{/if}-->>
 								<option value="0"><!--{if $questionexist}-->{lang security_question_0}<!--{else}-->{lang security_question}<!--{/if}--></option>
 								<option value="1">{lang security_question_1}</option>
 								<option value="2">{lang security_question_2}</option>
@@ -111,7 +111,7 @@
 					<table>
 						<tr>
 							<th>{lang security_a}:</th>
-							<td><input type="text" name="answer" id="loginanswer_$loginhash" autocomplete="off" size="30" class="px p_fre" tabindex="1" /></td>
+							<td><input type="text" name="answer" id="loginanswer_$loginhash" autocomplete="off" size="30" class="px p_fre form-control" tabindex="1" /></td>
 						</tr>
 					</table>
 				</div>
@@ -128,7 +128,7 @@
 					<table>
 						<tr>
 							<th></th>
-							<td><label for="cookietime_$loginhash"><input type="checkbox" class="pc" name="cookietime" id="cookietime_$loginhash" tabindex="1" value="2592000" $cookietimecheck />{lang login_permanent}</label></td>
+							<td class="checkbox"><label for="cookietime_$loginhash"><input type="checkbox" class="pc" name="cookietime" id="cookietime_$loginhash" tabindex="1" value="2592000" $cookietimecheck />{lang login_permanent}</label></td>
 						</tr>
 					</table>
 				</div>
@@ -138,11 +138,11 @@
 						<tr>
 							<th>&nbsp;</th>
 							<td>
-								<button class="pn pnc" type="submit" name="loginsubmit" value="true" tabindex="1"><strong>{lang login}</strong></button>
+								<button class="btn btn-primary" type="submit" name="loginsubmit" value="true" tabindex="1"><strong>{lang login}</strong></button>
 							</td>
 							<td>
 								<!--{if $this->setting['sitemessage'][login] && empty($_GET['infloat'])}--><a href="javascript:;" id="custominfo_login_$loginhash" class="y">&nbsp;<img src="{IMGDIR}/info_small.gif" alt="{lang faq}" class="vm" /></a><!--{/if}-->
-								<!--{if !$this->setting['bbclosed'] && empty($_GET['infloat'])}--><a href="javascript:;" onclick="ajaxget('member.php?mod=clearcookies&formhash={FORMHASH}', 'returnmessage_$loginhash', 'returnmessage_$loginhash');return false;" title="{lang login_clearcookies}" class="y">{lang login_clearcookies}</a><!--{/if}-->
+								<!--{if !$this->setting['bbclosed'] && empty($_GET['infloat'])}--><a href="javascript:;" onclick="ajaxget('member.php?mod=clearcookies&formhash={FORMHASH}', 'returnmessage_$loginhash', 'returnmessage_$loginhash');return false;" title="{lang login_clearcookies}" class="">{lang login_clearcookies}</a><!--{/if}-->
 							</td>
 						</tr>
 					</table>
@@ -171,14 +171,14 @@
 			<span><!--{if !empty($_GET['infloat']) && !isset($_GET['frommessage'])}--><a href="javascript:;" class="flbc" onclick="hideWindow('login')" title="{lang close}">{lang close}</a><!--{/if}--></span>
 		</h3>
 		<form method="post" autocomplete="off" id="lostpwform_$loginhash" class="cl" onsubmit="ajaxpost('lostpwform_$loginhash', 'returnmessage3_$loginhash', 'returnmessage3_$loginhash', 'onerror');return false;" action="member.php?mod=lostpasswd&lostpwsubmit=yes&infloat=yes">
-			<div class="c cl">
+			<div class="c cl form-group">
 				<input type="hidden" name="formhash" value="{FORMHASH}" />
 				<input type="hidden" name="handlekey" value="lostpwform" />
 				<div class="rfm">
 					<table>
 						<tr>
 							<th><span class="rq">*</span><label for="lostpw_email">{lang email}:</label></th>
-							<td><input type="text" name="email" id="lostpw_email" size="30" value=""  tabindex="1" class="px p_fre" /></td>
+							<td><input type="text" name="email" id="lostpw_email" size="30" value=""  tabindex="1" class="px p_fre form-control" /></td>
 						</tr>
 					</table>
 				</div>
@@ -186,7 +186,7 @@
 					<table>
 						<tr>
 							<th><label for="lostpw_username">{lang username}:</label></th>
-							<td><input type="text" name="username" id="lostpw_username" size="30" value=""  tabindex="1" class="px p_fre" /></td>
+							<td><input type="text" name="username" id="lostpw_username" size="30" value=""  tabindex="1" class="px p_fre form-control" /></td>
 						</tr>
 					</table>
 				</div>
@@ -195,7 +195,7 @@
 					<table>
 						<tr>
 							<th></th>
-							<td><button class="pn pnc" type="submit" name="lostpwsubmit" value="true" tabindex="100"><span>{lang submit}</span></button></td>
+							<td><button class="btn btn-primary" type="submit" name="lostpwsubmit" value="true" tabindex="100"><span>{lang submit}</span></button></td>
 						</tr>
 					</table>
 				</div>

@@ -8,6 +8,8 @@
 kbd { border: 0px; background-color: inherit; -webkit-box-shadow: none; box-shadow: none;}
 
 .wp { width: auto; }
+.rfm { width: auto; }
+.rfm .p_tip { width: auto;}
 .ct2_a .mn { width: 80%; text-align: left; }
 
 
