@@ -10,7 +10,7 @@ kbd { color: red; border: 0px; background-color: inherit; -webkit-box-shadow: no
 .wp { width: auto; }
 .rfm { width: auto; }
 .rfm .p_tip { width: auto;}
-.ct2_a .mn { width: 80%; text-align: left; }
+.ct2_a .mn { text-align: left; }
 
 
 /* forum */
