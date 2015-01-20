@@ -31,7 +31,7 @@
           <li class="navbar-user"><a href="member.php?mod=logging&action=login" onclick="showWindow('login', this.href)">{lang activation}</a></li>
           <li class="navbar-user"><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a></li>
           <!--{elseif !$_G[connectguest]}-->
-          <li class="navbar-user"><a href="member.php?mod=register">×¢²á</a></li><li><a href="member.php?mod=logging&action=login">µÇÂ¼</a></li>
+          <li class="navbar-user"><a href="member.php?mod=register">×¢²á</a></li><li><a href="member.php?mod=logging&action=login&referer={echo rawurlencode($dreferer)}">µÇÂ¼</a></li>
           <!--{else}-->
           <li class="navbar-user">{$_G[member][username]}<a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</li>
           <!--{/if}-->

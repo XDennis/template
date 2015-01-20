@@ -5,7 +5,7 @@
  html, body { background: #f3f3f3; }
  h1, .h1, h2, .h2, h3, .h3 { margin-top: 10px; }
 .px { height: auto; }
-kbd { border: 0px; background-color: inherit; -webkit-box-shadow: none; box-shadow: none;}
+kbd { color: red; border: 0px; background-color: inherit; -webkit-box-shadow: none; box-shadow: none;}
 
 .wp { width: auto; }
 .rfm { width: auto; }
