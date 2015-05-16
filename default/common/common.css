@@ -88,7 +88,7 @@ CSS 写作注意事项：
 	Last Modify:	Pony
 */
 	* { word-wrap: break-word; }
-	body { {BGCODE}; }
+	/*body { {BGCODE}; }*/
 	body, input, button, select, textarea { font: {FONTSIZE} {FONT}; color: {TABLETEXT}; }
 		textarea { resize: none; }
 	body, ul, ol, li, dl, dd, p, h1, h2, h3, h4, h5, h6, form, fieldset, .pr, .pc { margin: 0; padding: 0; }
@@ -586,8 +586,8 @@ CSS 写作注意事项：
 	#hd { border-bottom: {HEADERBORDER} solid {SPECIALBORDER}; {HEADERBGCODE} }
 		#hd .wp { padding: 10px 0 0; }
 
-			.hdc { min-height: 70px; }
-				.ie6 .hdc { height: 70px; }
+			.hdc { min-height: 100px; }
+				.ie6 .hdc { height: 100px; }
 			#hd h2 { padding: 0 20px 8px 0; float: left; }
 				#space #hd h2 { margin-top: 0; }
 			#hd .fastlg { padding-top: 10px; }
@@ -694,8 +694,8 @@ CSS 写作注意事项：
 		.ie6 #ct { height: 300px; }
 		.mn { overflow: hidden; }
 		.ct1 { border: 1px solid {WRAPBORDERCOLOR}; border-top: none; }
-		.ct2 .mn { float: left; width: 730px; margin-bottom: 1em; }
-		.ct2 .sd { float: right; width: 220px; overflow: hidden; _overflow-y: visible; }
+		.ct2 .mn { float: left; width: 730px; margin-bottom: 1em; margin: 3px 0px 3px 3px; }
+		.ct2 .sd { float: right; width: 200px; overflow: hidden; _overflow-y: visible; margin: 3px; }
 
 		.appl { float: left; overflow: hidden; margin-bottom: 10px; padding: 6px 10px; width: 117px; }
 
@@ -777,7 +777,7 @@ CSS 写作注意事项：
 	Last Modify:	lushnis
 */
 	#pt { margin: 2px 0; height: 29px; border:none; background: transparent; line-height: 29px; }
-		#pt .z { padding-right: 10px; }
+		#pt .z { padding-right: 10px; padding-left: 10px; }
 		#pt .z a, #pt .z em, #pt .z span { float: left; height: 29px; }
 		#pt .z em { width: 20px; background: url({IMGDIR}/pt_item.png) no-repeat 3px 10px; line-height: 200px; overflow: hidden; }
 		.nvhm { width: 16px; background: url({IMGDIR}/search.png) no-repeat 0 0; line-height: 200px; overflow: hidden; }
